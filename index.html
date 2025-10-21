@@ -1,19 +1,23 @@
 <!doctype html>
 <html lang="pt-BR">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>ONG Seu Jairo — Transformando Vidas</title>
-  <meta name="description" content="ONG Seu Jairo — projetos, voluntariado e doações com transparência.">
-  <link rel="stylesheet" href="style.css?v=13">
+  <meta name="description" content="ONG Seu Jairo — projetos, voluntariado e doações com transparência." />
+  <link rel="stylesheet" href="style.css?v=14" />
 </head>
 <body>
   <a class="skip-link" href="#conteudo">Ir para o conteúdo</a>
 
   <!-- TOPO -->
   <header class="topo" role="banner">
-    <div class="container">
-      <img class="logo logo-home" src="/plataforma-ong/imagens/logo.png" alt="Logo da ONG Seu Jairo">
+    <div class="container topo-flex">
+      <a href="index.html" class="logo-link" aria-label="Página inicial">
+        <!-- Caminho RELATIVO (correto no GitHub Pages) -->
+        <img class="logo logo-home" src="imagens/logo.png" alt="Logo da ONG Seu Jairo" />
+      </a>
+
       <nav aria-label="Navegação principal">
         <ul class="menu">
           <li><a href="index.html" aria-current="page">Início</a></li>
@@ -27,7 +31,6 @@
 
   <!-- CONTEÚDO PRINCIPAL -->
   <main id="conteudo">
-
     <!-- HERO -->
     <section class="hero-xl">
       <div class="container hero-xl__grid">
@@ -44,15 +47,17 @@
             <li><strong>8</strong><span>projetos em curso</span></li>
           </ul>
         </div>
+
         <div class="hero-xl__art">
-          <img src="hero.svg" alt="Ilustração de voluntários colaborando" loading="lazy">
+          <img src="hero.svg" alt="Ilustração de voluntários colaborando" loading="lazy" />
         </div>
       </div>
     </section>
 
     <!-- BANNER INSTITUCIONAL -->
-    <section class="banner">
-      <img src="/plataforma-ong/imagens/banner.png" alt="Banner institucional da ONG Seu Jairo" class="banner-img">
+    <section class="banner" aria-label="Mensagem institucional">
+      <!-- Caminho RELATIVO -->
+      <img src="imagens/banner.png" alt="Banner institucional da ONG Seu Jairo" class="banner-img" />
     </section>
 
     <!-- SOBRE -->
@@ -61,30 +66,37 @@
         <h2 id="ttl-sobre">Quem somos</h2>
         <p class="section__sub">Missão, visão e valores que guiam nossas ações.</p>
       </header>
+
       <div class="cards">
         <article class="card">
           <h3>Missão</h3>
           <p>Gerar oportunidades e autonomia por meio de ações comunitárias contínuas.</p>
         </article>
+
         <article class="card">
           <h3>Visão</h3>
           <p>Ser referência em transparência e impacto social na região.</p>
         </article>
+
         <article class="card">
           <h3>Valores</h3>
           <ul class="lista-inline">
-            <li>Ética</li><li>Transparência</li><li>Inclusão</li><li>Colaboração</li>
+            <li>Ética</li>
+            <li>Transparência</li>
+            <li>Inclusão</li>
+            <li>Colaboração</li>
           </ul>
         </article>
       </div>
     </section>
 
-    <!-- PROJETOS -->
+    <!-- PROJETOS (chamada) -->
     <section class="container section" aria-labelledby="ttl-destaques">
       <header class="section__head">
         <h2 id="ttl-destaques">Nossos projetos</h2>
         <p class="section__sub">Apoie iniciativas de educação, saúde e meio ambiente.</p>
       </header>
+
       <div class="highlight">
         <div>
           <h3>Transparência sempre</h3>
@@ -101,10 +113,11 @@
         <h2 id="ttl-contato">Contato</h2>
         <p class="section__sub">Fale com nossa equipe.</p>
       </header>
+
       <address class="contact-grid">
-        <p><strong>Endereço</strong><br>Rua Exemplo, 123 — Centro — Cidade/UF</p>
-        <p><strong>Telefone</strong><br><a href="tel:+5511999999999">(11) 99999-9999</a></p>
-        <p><strong>E-mail</strong><br><a href="mailto:contato@seujairo.org.br">contato@seujairo.org.br</a></p>
+        <p><strong>Endereço</strong><br />Rua Exemplo, 123 — Centro — Cidade/UF</p>
+        <p><strong>Telefone</strong><br /><a href="tel:+5511999999999">(11) 99999-9999</a></p>
+        <p><strong>E-mail</strong><br /><a href="mailto:contato@seujairo.org.br">contato@seujairo.org.br</a></p>
       </address>
     </section>
   </main>
