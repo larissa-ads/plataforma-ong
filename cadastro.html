@@ -5,8 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Cadastro — ONG Seu Jairo</title>
   <meta name="description" content="Cadastro de voluntários e doadores da ONG Seu Jairo.">
-  <!-- CSS na raiz -->
-  <link rel="stylesheet" href="style.css?v=8">
+  <link rel="stylesheet" href="style.css?v=9">
 </head>
 <body>
   <a class="skip-link" href="#conteudo">Ir para o conteúdo</a>
@@ -24,18 +23,31 @@
     </div>
   </header>
 
-  <!-- Banner / título da página -->
   <section class="page-hero container" aria-label="Introdução">
     <h1>Cadastro</h1>
     <p>Preencha seus dados para apoiar um projeto ou participar como voluntário.</p>
   </section>
 
   <main id="conteudo" class="container">
-    <!-- Cartão do formulário -->
     <section class="form-card" aria-labelledby="ttl-form">
       <h2 id="ttl-form" class="sr-only">Formulário de cadastro</h2>
 
       <form id="form-cadastro" method="post" action="#" novalidate>
+        <!-- TIPO DE PARTICIPAÇÃO -->
+        <fieldset class="fieldset">
+          <legend>Tipo de participação</legend>
+          <div class="option-group" role="radiogroup" aria-label="Tipo de participação">
+            <label class="radio-chip">
+              <input type="radio" name="tipo" value="voluntario" checked aria-controls="bloco-voluntario">
+              <span class="option">Voluntário</span>
+            </label>
+            <label class="radio-chip">
+              <input type="radio" name="tipo" value="doador" aria-controls="bloco-doador">
+              <span class="option">Doador</span>
+            </label>
+          </div>
+        </fieldset>
+
         <!-- DADOS PESSOAIS -->
         <fieldset class="fieldset">
           <legend>Dados pessoais</legend>
@@ -43,111 +55,19 @@
           <div class="form-grid">
             <div class="field">
               <label for="nome">Nome completo <span class="req" aria-hidden="true">*</span></label>
-              <input id="nome" name="nome" type="text" required minlength="3"
-                     autocomplete="name" placeholder="Seu nome completo">
+              <input id="nome" name="nome" type="text" required minlength="3" autocomplete="name" placeholder="Seu nome completo">
             </div>
 
             <div class="field">
               <label for="email">E-mail <span class="req" aria-hidden="true">*</span></label>
-              <input id="email" name="email" type="email" required autocomplete="email"
-                     placeholder="seu@email.com">
+              <input id="email" name="email" type="email" required autocomplete="email" placeholder="seu@email.com">
             </div>
 
             <div class="field">
               <label for="cpf">CPF <span class="req" aria-hidden="true">*</span></label>
               <input id="cpf" name="cpf" type="text" required inputmode="numeric" maxlength="14"
-                     placeholder="000.000.000-00"
-                     pattern="^\d{3}\.\d{3}\.\d{3}-\d{2}$" aria-describedby="cpf-ajuda">
+                     placeholder="000.000.000-00" pattern="^\d{3}\.\d{3}\.\d{3}-\d{2}$" aria-describedby="cpf-ajuda">
               <small id="cpf-ajuda" class="hint">Formato: 000.000.000-00</small>
             </div>
 
             <div class="field">
-              <label for="telefone">Telefone <span class="req" aria-hidden="true">*</span></label>
-              <input id="telefone" name="telefone" type="tel" required inputmode="tel" maxlength="15"
-                     placeholder="(00) 90000-0000">
-            </div>
-
-            <div class="field">
-              <label for="nascimento">Data de nascimento</label>
-              <input id="nascimento" name="nascimento" type="date">
-            </div>
-
-            <div class="field">
-              <label for="area">Área de interesse</label>
-              <select id="area" name="area">
-                <option value="">Selecione</option>
-                <option value="educacao">Educação</option>
-                <option value="saude">Saúde</option>
-                <option value="meio-ambiente">Meio Ambiente</option>
-              </select>
-            </div>
-          </div>
-        </fieldset>
-
-        <!-- ENDEREÇO -->
-        <fieldset class="fieldset">
-          <legend>Endereço</legend>
-
-          <div class="form-grid">
-            <div class="field">
-              <label for="cep">CEP <span class="req" aria-hidden="true">*</span></label>
-              <input id="cep" name="cep" type="text" required inputmode="numeric" maxlength="9"
-                     placeholder="00000-000" pattern="^\d{5}-\d{3}$">
-              <small class="hint">Somente números; a máscara preenche o hífen automaticamente.</small>
-            </div>
-
-            <div class="field">
-              <label for="endereco">Endereço</label>
-              <input id="endereco" name="endereco" type="text" autocomplete="street-address"
-                     placeholder="Rua, número, complemento">
-            </div>
-
-            <div class="field">
-              <label for="cidade">Cidade</label>
-              <input id="cidade" name="cidade" type="text" autocomplete="address-level2">
-            </div>
-
-            <div class="field">
-              <label for="estado">Estado</label>
-              <select id="estado" name="estado">
-                <option value="">Selecione</option>
-                <option>AC</option><option>AL</option><option>AP</option><option>AM</option>
-                <option>BA</option><option>CE</option><option>DF</option><option>ES</option>
-                <option>GO</option><option>MA</option><option>MT</option><option>MS</option>
-                <option>MG</option><option>PA</option><option>PB</option><option>PR</option>
-                <option>PE</option><option>PI</option><option>RJ</option><option>RN</option>
-                <option>RS</option><option>RO</option><option>RR</option><option>SC</option>
-                <option>SP</option><option>SE</option><option>TO</option>
-              </select>
-            </div>
-          </div>
-        </fieldset>
-
-        <!-- PREFERÊNCIAS -->
-        <fieldset class="fieldset">
-          <legend>Preferências</legend>
-          <label class="check">
-            <input type="checkbox" name="newsletter"> Quero receber newsletter
-          </label>
-        </fieldset>
-
-        <p class="acoes">
-          <button type="submit" class="btn">Enviar cadastro</button>
-          <button type="reset" class="btn ghost">Limpar</button>
-        </p>
-
-        <p id="feedback" role="status" aria-live="polite"></p>
-      </form>
-    </section>
-  </main>
-
-  <footer class="rodape">
-    <div class="container">
-      <p>&copy; 2025 ONG Seu Jairo</p>
-    </div>
-  </footer>
-
-  <!-- JS de máscaras na raiz -->
-  <script src="masks.js" defer></script>
-</body>
-</html>
