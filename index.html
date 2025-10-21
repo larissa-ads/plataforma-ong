@@ -48,17 +48,41 @@
     </section>
     
 <!-- Banner institucional -->
-<section class="banner">
-  <div class="banner-text">
-    <h2>Quem foi Seu Jairo</h2>
-    <p>
-      A ONG Seu Jairo foi fundada com o propósito de homenagear o legado de um homem
-      humilde e comprometido com o bem-estar da comunidade. Convidamos você a se unir a nós
-      nessa missão de impactar positivamente a vida de mais famílias.
-    </p>
-  </div>
-  <img src="banner.png" alt="Seu Jairo — homenagem e legado da ONG">
-</section>
+/* ===== Banner ===== */
+.banner {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  max-width: 1100px;
+  margin: 3rem auto;
+  padding: 1rem;
+  background: #f6f9f8;
+  border-radius: 20px;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  flex-wrap: wrap;
+}
+
+.banner img {
+  width: 100%;
+  max-width: 500px; /* 🔹 Limita o tamanho da imagem */
+  height: auto;
+  border-radius: 16px;
+  object-fit: cover;
+  margin: 1rem;
+}
+
+.banner-text {
+  flex: 1;
+  min-width: 250px;
+  max-width: 500px;
+  padding: 1rem;
+  font-size: 1.1rem;
+  color: #333;
+  line-height: 1.6;
+  text-align: left;
+}
+
 
 
 
