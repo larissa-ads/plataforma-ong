@@ -147,17 +147,22 @@ input:focus,select:focus,textarea:focus{border-color:var(--brand);box-shadow:0 0
 #feedback.error{color:#b91c1c;font-weight:700}
 
 /* ===== Banner (SOMENTE imagem) ===== */
-.banner{
-  width:100%;
-  display:flex;justify-content:center;
-  margin:2rem 0;
+/* ===== Banner ===== */
+.banner {
+  display: flex;
+  justify-content: center;
+  margin: 2rem auto;
+  max-width: 1000px; /* opcional: limita a largura */
 }
-.banner-img{
-  width:100%;
-  max-height:400px;          /* 🔹 controla o tamanho */
-  object-fit:cover;
-  border-radius:16px;
-  box-shadow:0 8px 24px rgba(0,0,0,.12);
+
+.banner-img {
+  width: 100%;
+  max-height: 320px;  /* 🔹 Reduz a altura */
+  object-fit: contain; /* mostra a imagem inteira sem cortar */
+  border-radius: 16px;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+}
+
 }
 
 /* ===== Responsivo ===== */
