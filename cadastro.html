@@ -1,0 +1,109 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Cadastro — ONG Seu Jairo</title>
+  <meta name="description" content="Cadastro de voluntários e doadores da ONG Seu Jairo.">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <a class="skip-link" href="#conteudo">Ir para o conteúdo</a>
+  <header class="topo">
+    <div class="container">
+      <img class="logo" src="imagens/logo.svg" alt="Logo da ONG Seu Jairo">
+      <nav aria-label="Navegação principal">
+        <ul class="menu">
+          <li><a href="index.html">Início</a></li>
+          <li><a href="projetos.html">Projetos</a></li>
+          <li><a href="cadastro.html" aria-current="page">Cadastro</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main id="conteudo" class="container">
+    <h1>Cadastro de Voluntário / Doador</h1>
+    <p class="lead">Campos com * são obrigatórios.</p>
+
+    <form id="form-cadastro" method="post" action="#" novalidate>
+      <fieldset>
+        <legend>Dados Pessoais</legend>
+
+        <label for="nome">Nome completo *</label>
+        <input id="nome" name="nome" type="text" required minlength="3" autocomplete="name" placeholder="Seu nome completo">
+
+        <label for="email">E-mail *</label>
+        <input id="email" name="email" type="email" required autocomplete="email" placeholder="seu@email.com">
+
+        <label for="cpf">CPF *</label>
+        <input id="cpf" name="cpf" type="text" required inputmode="numeric" maxlength="14"
+               placeholder="000.000.000-00"
+               pattern="^\d{3}\.\d{3}\.\d{3}-\d{2}$"
+               aria-describedby="cpf-ajuda">
+        <small id="cpf-ajuda">Formato: 000.000.000-00</small>
+
+        <label for="telefone">Telefone *</label>
+        <input id="telefone" name="telefone" type="tel" required inputmode="tel" maxlength="15"
+               placeholder="(00) 90000-0000">
+
+        <label for="nascimento">Data de nascimento</label>
+        <input id="nascimento" name="nascimento" type="date">
+      </fieldset>
+
+      <fieldset>
+        <legend>Endereço</legend>
+
+        <label for="cep">CEP *</label>
+        <input id="cep" name="cep" type="text" required inputmode="numeric" maxlength="9"
+               placeholder="00000-000" pattern="^\d{5}-\d{3}$">
+
+        <label for="endereco">Endereço</label>
+        <input id="endereco" name="endereco" type="text" autocomplete="street-address" placeholder="Rua, número, complemento">
+
+        <label for="cidade">Cidade</label>
+        <input id="cidade" name="cidade" type="text" autocomplete="address-level2">
+
+        <label for="estado">Estado</label>
+        <select id="estado" name="estado">
+          <option value="">Selecione</option>
+          <option>AC</option><option>AL</option><option>AP</option><option>AM</option>
+          <option>BA</option><option>CE</option><option>DF</option><option>ES</option>
+          <option>GO</option><option>MA</option><option>MT</option><option>MS</option>
+          <option>MG</option><option>PA</option><option>PB</option><option>PR</option>
+          <option>PE</option><option>PI</option><option>RJ</option><option>RN</option>
+          <option>RS</option><option>RO</option><option>RR</option><option>SC</option>
+          <option>SP</option><option>SE</option><option>TO</option>
+        </select>
+      </fieldset>
+
+      <fieldset>
+        <legend>Preferências</legend>
+        <label><input type="checkbox" name="newsletter"> Quero receber newsletter</label>
+
+        <label for="area">Área de interesse</label>
+        <select id="area" name="area">
+          <option value="educacao">Educação</option>
+          <option value="saude">Saúde</option>
+          <option value="meio-ambiente">Meio Ambiente</option>
+        </select>
+      </fieldset>
+
+      <p class="acoes">
+        <button type="submit" class="btn">Enviar cadastro</button>
+        <button type="reset" class="btn ghost">Limpar</button>
+      </p>
+
+      <p id="feedback" role="status" aria-live="polite"></p>
+    </form>
+  </main>
+
+  <footer class="rodape">
+    <div class="container">
+      <p>&copy; 2025 ONG Seu Jairo</p>
+    </div>
+  </footer>
+
+  <script src="js/masks.js" defer></script>
+</body>
+</html>

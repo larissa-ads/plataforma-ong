@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="360" height="240" viewBox="0 0 360 240" role="img">
+  <rect width="360" height="240" fill="#f0f9f5"/>
+  <g fill="#0b6e4f">
+    <rect x="40" y="50" width="60" height="60" rx="8" opacity=".9"/>
+    <rect x="120" y="50" width="60" height="60" rx="8" opacity=".7"/>
+    <rect x="200" y="50" width="60" height="60" rx="8" opacity=".5"/>
+  </g>
+  <text x="50%" y="80%" dominant-baseline="middle" text-anchor="middle" font-family="Arial" font-size="18" fill="#0b6e4f">Educação para Todos</text>
+</svg>

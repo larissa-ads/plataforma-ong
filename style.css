@@ -1,0 +1,46 @@
+/* Estilo moderno, mobile-first, acessível */
+:root{
+  --bg:#ffffff; --text:#0b0b0b; --brand:#0b6e4f; --muted:#6b7280; --surface:#f6f7f8;
+  --radius:16px; --shadow:0 10px 25px rgba(0,0,0,.05);
+}
+*{box-sizing:border-box}
+html,body{height:100%}
+body{margin:0;font-family:system-ui,-apple-system,Segoe UI,Roboto,Arial;line-height:1.55;background:var(--bg);color:var(--text)}
+.container{max-width:1100px;margin:0 auto;padding:1rem}
+.skip-link{position:absolute;left:-999px;top:auto;background:#000;color:#fff;padding:.5rem 1rem;border-radius:8px}
+.skip-link:focus{left:1rem;top:1rem}
+.topo{position:sticky;top:0;background:linear-gradient(180deg, rgba(11,110,79,.08), transparent);backdrop-filter:saturate(180%) blur(6px);z-index:10}
+.logo{height:44px}
+.menu{list-style:none;margin:0;padding:0;display:flex;gap:1rem;align-items:center}
+.menu a{text-decoration:none;color:var(--brand);padding:.25rem .5rem;border-radius:8px}
+.menu a[aria-current="page"]{background:rgba(11,110,79,.1)}
+.hero{padding:2rem 0}
+.hero__grid{display:grid;gap:1.25rem;align-items:center}
+.hero h1{font-size:1.8rem;margin:.25rem 0}
+.lead{color:var(--muted)}
+.btn{display:inline-block;padding:.7rem 1rem;border-radius:12px;background:var(--brand);color:#fff;text-decoration:none;box-shadow:var(--shadow)}
+.btn.ghost{background:transparent;border:1px solid var(--brand);color:var(--brand);box-shadow:none}
+.hero__img img{width:100%;height:auto}
+.cards,.grid-3{display:grid;gap:1rem}
+.card{background:var(--surface);border-radius:var(--radius);padding:1rem;box-shadow:var(--shadow)}
+.lista-inline{list-style:none;margin:0;padding:0;display:flex;flex-wrap:wrap;gap:.5rem}
+.contato address{font-style:normal;color:#111}
+.rodape{padding:1rem 0;margin-top:2rem;border-top:1px solid #eee}
+/* Projetos */
+.lista-projetos{list-style:none;margin:0;padding:0;display:grid;gap:1rem}
+.item-projeto{display:grid;grid-template-columns:120px 1fr;gap:1rem;align-items:center;background:var(--surface);padding:1rem;border-radius:12px}
+.item-projeto img{width:120px;height:88px;object-fit:cover;border-radius:8px}
+.aside-doacao{margin-top:1rem;background:#eef7f4;padding:1rem;border-radius:12px}
+/* Formulário */
+label{display:block;margin-top:.8rem}
+input,select,textarea{width:100%;padding:.6rem;border:1px solid #e5e7eb;border-radius:10px}
+small{color:var(--muted)}
+.acoes{margin-top:1rem}
+#feedback.success{color:green} #feedback.error{color:#b91c1c}
+/* Responsivo */
+@media(min-width:700px){
+  .hero__grid{grid-template-columns:1.1fr .9fr}
+  .cards{grid-template-columns:repeat(3,1fr)}
+  .grid-3{grid-template-columns:repeat(3,1fr)}
+  .lista-projetos{grid-template-columns:1fr 1fr}
+}

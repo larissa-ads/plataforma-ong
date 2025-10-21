@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="360" height="240" viewBox="0 0 360 240" role="img">
+  <rect width="360" height="240" fill="#eef7f4"/>
+  <g stroke="#0b6e4f" fill="none" stroke-width="6">
+    <circle cx="90" cy="120" r="40"/>
+    <circle cx="180" cy="120" r="40"/>
+    <circle cx="270" cy="120" r="40"/>
+  </g>
+  <text x="50%" y="85%" dominant-baseline="middle" text-anchor="middle" font-family="Arial" font-size="18" fill="#0b6e4f">Saúde Comunitária</text>
+</svg>

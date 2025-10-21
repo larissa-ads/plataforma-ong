@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="960" height="520" viewBox="0 0 960 520" role="img">
+  <defs>
+    <linearGradient id="g" x1="0" x2="1">
+      <stop offset="0" stop-color="#e7f5ef"/>
+      <stop offset="1" stop-color="#d0ece2"/>
+    </linearGradient>
+  </defs>
+  <rect width="960" height="520" fill="url(#g)"/>
+  <circle cx="200" cy="160" r="90" fill="#0b6e4f" opacity=".25"/>
+  <circle cx="420" cy="200" r="120" fill="#0b6e4f" opacity=".18"/>
+  <circle cx="730" cy="150" r="70" fill="#0b6e4f" opacity=".22"/>
+  <text x="50%" y="55%" dominant-baseline="middle" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="36" fill="#0b6e4f">Juntos, fazemos mais.</text>
+</svg>
