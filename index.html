@@ -1,42 +1,116 @@
-/* ===== HOME — hero e seções ===== */
-.hero-xl{
-  background:
-    radial-gradient(1000px 380px at -10% -30%, #e7f5ef, transparent 60%),
-    radial-gradient(1000px 380px at 110% 130%, #f0fff7, transparent 60%),
-    linear-gradient(180deg, #ffffff, #f7fbf9);
-  padding: 1.2rem 0 1.6rem;
-  border-bottom: 1px solid var(--line);
-}
-.hero-xl__grid{display:grid; gap:1.2rem; align-items:center}
-.hero-xl__copy h1{font-size:clamp(1.9rem, 3vw, 2.6rem); line-height:1.2; margin:.2rem 0 .4rem}
-.kpis{display:flex; gap:1rem; list-style:none; padding:0; margin:1rem 0 0}
-.kpis li{background:#fff; border:1px solid var(--line); border-radius:14px; padding:.7rem .9rem; box-shadow:var(--shadow); display:grid}
-.kpis strong{font-size:1.25rem; line-height:1}
-.kpis span{color:var(--muted); font-size:.85rem}
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>ONG Seu Jairo — Transformando Vidas</title>
+  <meta name="description" content="ONG Seu Jairo — projetos, voluntariado e doações com transparência.">
+  <link rel="stylesheet" href="style.css?v=10">
+</head>
+<body>
+  <a class="skip-link" href="#conteudo">Ir para o conteúdo</a>
 
-.section{margin:1.5rem 0}
-.section__head{display:grid; gap:.3rem; margin-bottom:.8rem}
-.section__sub{color:var(--muted); margin:0}
+  <header class="topo" role="banner">
+    <div class="container">
+      <img class="logo" src="logo.svg" alt="Logotipo da ONG Seu Jairo" width="140" height="40">
+      <nav aria-label="Navegação principal">
+        <ul class="menu">
+          <li><a href="index.html" aria-current="page">Início</a></li>
+          <li><a href="projetos.html">Projetos</a></li>
+          <li><a href="cadastro.html">Cadastro</a></li>
+          <li><a href="#contato">Contato</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
 
-/* Destaque de projetos */
-.highlight{
-  position:relative; overflow:hidden; border:1px solid var(--line);
-  border-radius:20px; padding:1.1rem; background:#fff; box-shadow:var(--shadow);
-  display:grid; gap:.6rem;
-}
-.highlight__bg{
-  position:absolute; inset:0;
-  background: radial-gradient(800px 220px at 10% -30%, #e7f5ef, transparent 60%),
-              radial-gradient(800px 220px at 110% 130%, #f0fff7, transparent 60%);
-  z-index:0; opacity:.9;
-}
-.highlight > *{position:relative; z-index:1}
+  <main id="conteudo">
+    <!-- HERO -->
+    <section class="hero-xl">
+      <div class="container hero-xl__grid">
+        <div class="hero-xl__copy">
+          <h1>Conectando pessoas, ideias e oportunidades</h1>
+          <p class="lead">A <strong>ONG Seu Jairo</strong> promove educação, saúde e inclusão por meio de projetos com impacto real e transparência.</p>
+          <p class="cta">
+            <a class="btn" href="projetos.html">Conheça os projetos</a>
+            <a class="btn ghost" href="cadastro.html">Quero ser voluntário</a>
+          </p>
+          <ul class="kpis" aria-label="Resultados em números">
+            <li><strong>+3k</strong><span>pessoas atendidas</span></li>
+            <li><strong>120</strong><span>voluntários ativos</span></li>
+            <li><strong>8</strong><span>projetos em curso</span></li>
+          </ul>
+        </div>
+        <div class="hero-xl__art">
+          <img src="hero.svg" alt="Ilustração de voluntários colaborando" loading="lazy">
+        </div>
+      </div>
+    </section>
 
-/* Contato */
-.contact-grid{display:grid; gap:.6rem}
-.contact-grid a{color:var(--brand)}
-/* Responsivo */
-@media(min-width:800px){
-  .hero-xl__grid{grid-template-columns:1.1fr .9fr}
-  .contact-grid{grid-template-columns:repeat(3,1fr)}
-}
+    <!-- SOBRE -->
+    <section class="container section" aria-labelledby="ttl-sobre">
+      <header class="section__head">
+        <h2 id="ttl-sobre">Quem somos</h2>
+        <p class="section__sub">Missão, visão e valores que guiam nossas ações.</p>
+      </header>
+      <div class="cards">
+        <article class="card">
+          <h3>Missão</h3>
+          <p>Gerar oportunidades e autonomia por meio de ações comunitárias contínuas.</p>
+        </article>
+        <article class="card">
+          <h3>Visão</h3>
+          <p>Ser referência em transparência e impacto social na região.</p>
+        </article>
+        <article class="card">
+          <h3>Valores</h3>
+          <ul class="lista-inline">
+            <li>Ética</li><li>Transparência</li><li>Inclusão</li><li>Colaboração</li>
+          </ul>
+        </article>
+      </div>
+    </section>
+
+    <!-- CHAMADA PROJETOS -->
+    <section class="container section" aria-labelledby="ttl-destaques">
+      <header class="section__head">
+        <h2 id="ttl-destaques">Nossos projetos</h2>
+        <p class="section__sub">Apoie iniciativas de educação, saúde e meio ambiente.</p>
+      </header>
+      <div class="highlight">
+        <div>
+          <h3>Transparência sempre</h3>
+          <p>Metas públicas, progresso visível e relatórios periódicos.</p>
+          <a class="btn" href="projetos.html">Ver projetos</a>
+        </div>
+        <div class="highlight__bg" aria-hidden="true"></div>
+      </div>
+    </section>
+
+    <!-- CONTATO -->
+    <section id="contato" class="container section contato" aria-labelledby="ttl-contato">
+      <header class="section__head">
+        <h2 id="ttl-contato">Contato</h2>
+        <p class="section__sub">Fale com nossa equipe.</p>
+      </header>
+      <address class="contact-grid">
+        <p><strong>Endereço</strong><br>Rua Exemplo, 123 — Centro — Cidade/UF</p>
+        <p><strong>Telefone</strong><br><a href="tel:+5511999999999">(11) 99999-9999</a></p>
+        <p><strong>E-mail</strong><br><a href="mailto:contato@seujairo.org.br">contato@seujairo.org.br</a></p>
+      </address>
+    </section>
+  </main>
+
+  <footer class="rodape" role="contentinfo">
+    <div class="container">
+      <p>&copy; <time datetime="2025">2025</time> ONG Seu Jairo — Todos os direitos reservados.</p>
+      <nav aria-label="Redes sociais">
+        <ul class="lista-inline">
+          <li><a href="#" aria-label="Instagram">Instagram</a></li>
+          <li><a href="#" aria-label="Facebook">Facebook</a></li>
+        </ul>
+      </nav>
+    </div>
+  </footer>
+</body>
+</html>
