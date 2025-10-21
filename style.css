@@ -44,3 +44,65 @@ small{color:var(--muted)}
   .grid-3{grid-template-columns:repeat(3,1fr)}
   .lista-projetos{grid-template-columns:1fr 1fr}
 }
+
+/* ====== Página de Projetos ====== */
+.sr-only{position:absolute!important;left:-9999px!important}
+.page-head{display:grid; gap:.6rem; margin:1rem 0 1.2rem}
+.page-title{font-size:clamp(1.6rem, 2.4vw, 2.2rem); margin:0}
+.page-sub{color:var(--muted); margin:0}
+.filters{display:flex; gap:.5rem; flex-wrap:wrap; margin-top:.4rem}
+.chip{
+  border:1.5px solid var(--line); background:#fff; color:var(--text);
+  padding:.45rem .8rem; border-radius:999px; cursor:pointer; font-weight:600;
+}
+.chip.is-active{border-color:var(--brand); color:var(--brand); background:rgba(11,110,79,.08)}
+
+.projects-grid{display:grid; gap:1rem}
+.project-card{
+  display:grid; grid-template-columns: 1fr; gap:1rem;
+  background:var(--surface); border:1px solid var(--line);
+  border-radius:var(--radius); padding:1rem; box-shadow:var(--shadow);
+}
+.project-media{position:relative}
+.project-media .badge{
+  position:absolute; left:12px; top:12px; padding:.35rem .6rem; border-radius:999px;
+  background:#ecfeff; color:#0e7490; border:1px solid #cffafe; font-size:.85rem; font-weight:700;
+}
+.project-media .badge.green{background:#e7f5ef; color:#0b6e4f; border-color:#c7e9db}
+.project-title{margin:.2rem 0 .2rem; font-size:1.25rem}
+.project-desc{color:var(--muted); margin:.2rem 0 .8rem}
+
+.project-meta{display:grid; gap:.4rem}
+.progress-wrap{
+  --bg:#e8eef5; --fg:#0b6e4f;
+  background:var(--bg); height:12px; border-radius:999px; position:relative; overflow:hidden;
+  border:1px solid #dfe7f0;
+}
+.progress-bar{
+  --val:0%;
+  width:var(--val); height:100%; background:linear-gradient(90deg, var(--fg), #14a36d);
+  display:flex; align-items:center; justify-content:flex-end;
+  transition:width .6s ease;
+}
+.progress-bar span{
+  font-size:.8rem; font-weight:700; color:#0b6e4f; transform:translate(6px,-160%);
+}
+
+.goal{color:#334155; margin:0}
+.project-actions{display:flex; gap:.6rem; flex-wrap:wrap; margin-top:.6rem}
+
+.aside-doacao.fancy{
+  margin-top:1.2rem;
+  background: radial-gradient(1200px 400px at 20% -10%, #dff5ec, transparent 60%),
+              radial-gradient(1200px 400px at 120% 120%, #eafbf5, transparent 60%),
+              #f4fff9;
+  border:1px solid #cfece1;
+}
+
+/* Responsivo */
+@media (min-width: 800px){
+  .projects-grid{grid-template-columns: 1fr 1fr}
+  .project-card{grid-template-columns: 320px 1fr}
+  .project-media img{height:100%; object-fit:cover; border-radius:12px}
+}
+
