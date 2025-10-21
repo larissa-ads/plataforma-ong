@@ -165,3 +165,16 @@ input:focus,select:focus,textarea:focus{border-color:var(--brand);box-shadow:0 0
   .projects-grid{grid-template-columns:1fr 1fr}
   .form-grid{grid-template-columns:1fr 1fr}
 }
+.banner {
+  display: flex;
+  justify-content: center;
+  margin: 2rem 0;
+}
+
+.banner-img {
+  width: 100%;
+  max-height: 400px;
+  object-fit: cover;
+  border-radius: 16px;
+  box-shadow: 0 8px 24px rgba(0,0,0,.12);
+}
