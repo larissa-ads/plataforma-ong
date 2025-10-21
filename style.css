@@ -191,3 +191,29 @@ input:focus,select:focus,textarea:focus{
   margin: 2rem 0;
   box-shadow: 0 6px 25px rgba(0,0,0,0.15);
 }
+/* ===== Banner Lado a Lado ===== */
+.banner {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  gap: 2rem;
+  max-width: 1200px;
+  margin: 3rem auto;
+  padding: 2rem;
+  background: #f6f9f8;
+  border-radius: 20px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+}
+
+.banner img {
+  width: 100%;
+  height: auto;
+  border-radius: 16px;
+  object-fit: cover;
+}
+
+.banner-text {
+  font-size: 1.2rem;
+  color: #333;
+  line-height: 1.6;
+}
