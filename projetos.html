@@ -5,19 +5,14 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Projetos — ONG Seu Jairo</title>
   <meta name="description" content="Projetos sociais, doações e voluntariado da ONG Seu Jairo.">
-  <!-- ATENÇÃO: CSS NA RAIZ -->
-  <link rel="stylesheet" href="style.css?v=4">
+  <!-- CSS NA RAIZ + cache-buster -->
+  <link rel="stylesheet" href="style.css?v=6">
 </head>
 <body>
   <a class="skip-link" href="#conteudo">Ir para o conteúdo</a>
 
   <header class="topo">
-    <section class="page-hero container" aria-label="Introdução">
-  <h1>Projetos Sociais</h1>
-  <p>Transparência, impacto e participação comunitária. Escolha um projeto e faça parte.</p>
-</section>
     <div class="container">
-      <!-- ATENÇÃO: imagens na raiz -->
       <img class="logo" src="logo.svg" alt="Logo da ONG Seu Jairo">
       <nav aria-label="Navegação principal">
         <ul class="menu">
@@ -29,17 +24,19 @@
     </div>
   </header>
 
+  <!-- BANNER -->
+  <section class="page-hero container" aria-label="Introdução">
+    <h1>Projetos Sociais</h1>
+    <p>Transparência, impacto e participação comunitária. Escolha um projeto e faça parte.</p>
+  </section>
+
   <main id="conteudo" class="container">
-    <header class="page-head">
-      <h1 class="page-title">Projetos Sociais</h1>
-      <p class="page-sub">Apoie iniciativas e encontre vagas de voluntariado.</p>
-      <div class="filters" role="tablist" aria-label="Filtros de projetos">
-        <button class="chip is-active" role="tab" aria-selected="true">Todos</button>
-        <button class="chip" role="tab">Educação</button>
-        <button class="chip" role="tab">Saúde</button>
-        <button class="chip" role="tab">Meio ambiente</button>
-      </div>
-    </header>
+    <div class="filters" role="tablist" aria-label="Filtros de projetos">
+      <button class="chip is-active" role="tab" aria-selected="true">Todos</button>
+      <button class="chip" role="tab">Educação</button>
+      <button class="chip" role="tab">Saúde</button>
+      <button class="chip" role="tab">Meio ambiente</button>
+    </div>
 
     <section class="projects-grid" aria-labelledby="ttl-lista">
       <h2 id="ttl-lista" class="sr-only">Lista de projetos</h2>
@@ -50,20 +47,17 @@
           <img src="projeto1.svg" alt="Ilustração do projeto Educação para Todos" loading="lazy">
           <span class="badge">Educação</span>
         </div>
-
         <div class="project-body">
           <h3 class="project-title">Educação para Todos</h3>
           <p class="project-desc">
             Alfabetização e reforço escolar em comunidades vulneráveis, com turmas presenciais e encontros online.
           </p>
-
           <div class="project-meta">
             <div class="progress-wrap" aria-label="Arrecadação 32% da meta de R$ 25.000">
               <div class="progress-bar" style="--val:32%"><span>32%</span></div>
             </div>
             <p class="goal"><strong>Meta:</strong> R$ 25.000</p>
           </div>
-
           <div class="project-actions">
             <a class="btn" href="cadastro.html">Quero ajudar</a>
             <a class="btn ghost" href="cadastro.html">Quero ser voluntário</a>
@@ -77,20 +71,17 @@
           <img src="projeto2.svg" alt="Ilustração do projeto Saúde Comunitária" loading="lazy">
           <span class="badge green">Saúde</span>
         </div>
-
         <div class="project-body">
           <h3 class="project-title">Saúde Comunitária</h3>
           <p class="project-desc">
             Atendimentos básicos, orientação nutricional e campanhas de prevenção em bairros periféricos.
           </p>
-
-        <div class="project-meta">
+          <div class="project-meta">
             <div class="progress-wrap" aria-label="Arrecadação 40% da meta de R$ 15.000">
               <div class="progress-bar" style="--val:40%"><span>40%</span></div>
             </div>
             <p class="goal"><strong>Meta:</strong> R$ 15.000</p>
           </div>
-
           <div class="project-actions">
             <a class="btn" href="cadastro.html">Doar agora</a>
             <a class="btn ghost" href="cadastro.html">Ser voluntário</a>
@@ -98,35 +89,6 @@
         </div>
       </article>
     </section>
-
-    <!-- Projeto 3 -->
-<article class="project-card">
-  <div class="project-media">
-    <!-- Pode usar o hero.svg como ilustração geral -->
-    <img src="hero.svg" alt="Ilustração do projeto Meio Ambiente em ação" loading="lazy">
-    <span class="badge green">Meio ambiente</span>
-  </div>
-
-  <div class="project-body">
-    <h3 class="project-title">Viveiro Comunitário</h3>
-    <p class="project-desc">
-      Produção e doação de mudas nativas, mutirões de plantio e educação ambiental nas escolas do bairro.
-    </p>
-
-    <div class="project-meta">
-      <div class="progress-wrap" aria-label="Arrecadação 55% da meta de R$ 12.000">
-        <div class="progress-bar" style="--val:55%"><span>55%</span></div>
-      </div>
-      <p class="goal"><strong>Meta:</strong> R$ 12.000</p>
-    </div>
-
-    <div class="project-actions">
-      <a class="btn" href="cadastro.html">Apoiar</a>
-      <a class="btn ghost" href="cadastro.html">Ser voluntário</a>
-    </div>
-  </div>
-</article>
-
 
     <aside class="aside-doacao fancy" aria-labelledby="ttl-doar">
       <h2 id="ttl-doar">Como Doar</h2>
