@@ -184,3 +184,10 @@ input:focus,select:focus,textarea:focus{
 @media(min-width:800px){
   .form-grid{grid-template-columns:1fr 1fr}
 }
+.banner img {
+  width: 100%;
+  height: auto;
+  border-radius: 16px;
+  margin: 2rem 0;
+  box-shadow: 0 6px 25px rgba(0,0,0,0.15);
+}
