@@ -5,13 +5,14 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Projetos — ONG Seu Jairo</title>
   <meta name="description" content="Projetos sociais, doações e voluntariado da ONG Seu Jairo.">
-  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
   <a class="skip-link" href="#conteudo">Ir para o conteúdo</a>
+
   <header class="topo">
     <div class="container">
-      <img class="logo" src="imagens/logo.svg" alt="Logo da ONG Seu Jairo">
+      <img class="logo" src="logo.svg" alt="Logo da ONG Seu Jairo">
       <nav aria-label="Navegação principal">
         <ul class="menu">
           <li><a href="index.html">Início</a></li>
@@ -23,38 +24,79 @@
   </header>
 
   <main id="conteudo" class="container">
-    <h1>Projetos Sociais</h1>
-    <p class="lead">Apoie iniciativas e encontre vagas de voluntariado.</p>
+    <header class="page-head">
+      <h1 class="page-title">Projetos Sociais</h1>
+      <p class="page-sub">Apoie iniciativas e encontre vagas de voluntariado.</p>
+      <div class="filters" role="tablist" aria-label="Filtros de projetos">
+        <button class="chip is-active" role="tab" aria-selected="true">Todos</button>
+        <button class="chip" role="tab">Educação</button>
+        <button class="chip" role="tab">Saúde</button>
+        <button class="chip" role="tab">Meio ambiente</button>
+      </div>
+    </header>
 
-    <section aria-labelledby="ttl-lista">
-      <h2 id="ttl-lista">Lista de Projetos</h2>
-      <ul class="lista-projetos">
-        <li class="item-projeto">
-          <img src="imagens/projeto1.svg" alt="Ilustração de crianças estudando" loading="lazy">
-          <div>
-            <h3>Educação para Todos</h3>
-            <p>Alfabetização e reforço escolar em comunidades vulneráveis.</p>
-            <p><strong>Meta:</strong> R$ 25.000 — <progress value="8000" max="25000">32%</progress></p>
-            <p><a class="btn" href="cadastro.html">Quero ajudar</a></p>
-          </div>
-        </li>
+    <section class="projects-grid" aria-labelledby="ttl-lista">
+      <h2 id="ttl-lista" class="sr-only">Lista de projetos</h2>
 
-        <li class="item-projeto">
-          <img src="imagens/projeto2.svg" alt="Ilustração de equipe de saúde comunitária" loading="lazy">
-          <div>
-            <h3>Saúde Comunitária</h3>
-            <p>Atendimentos básicos e campanhas educativas de prevenção.</p>
-            <p><strong>Meta:</strong> R$ 15.000 — <progress value="6000" max="15000">40%</progress></p>
-            <p><a class="btn ghost" href="cadastro.html">Quero ser voluntário</a></p>
+      <!-- Projeto 1 -->
+      <article class="project-card">
+        <div class="project-media">
+          <img src="projeto1.svg" alt="Ilustração do projeto Educação para Todos" loading="lazy">
+          <span class="badge">Educação</span>
+        </div>
+
+        <div class="project-body">
+          <h3 class="project-title">Educação para Todos</h3>
+          <p class="project-desc">
+            Alfabetização e reforço escolar em comunidades vulneráveis, com turmas presenciais e encontros online.
+          </p>
+
+          <div class="project-meta">
+            <div class="progress-wrap" aria-label="Arrecadação 32% da meta de R$ 25.000">
+              <div class="progress-bar" style="--val:32%"><span>32%</span></div>
+            </div>
+            <p class="goal"><strong>Meta:</strong> R$ 25.000</p>
           </div>
-        </li>
-      </ul>
+
+          <div class="project-actions">
+            <a class="btn" href="cadastro.html">Quero ajudar</a>
+            <a class="btn ghost" href="cadastro.html">Quero ser voluntário</a>
+          </div>
+        </div>
+      </article>
+
+      <!-- Projeto 2 -->
+      <article class="project-card">
+        <div class="project-media">
+          <img src="projeto2.svg" alt="Ilustração do projeto Saúde Comunitária" loading="lazy">
+          <span class="badge green">Saúde</span>
+        </div>
+
+        <div class="project-body">
+          <h3 class="project-title">Saúde Comunitária</h3>
+          <p class="project-desc">
+            Atendimentos básicos, orientação nutricional e campanhas de prevenção em bairros periféricos.
+          </p>
+
+          <div class="project-meta">
+            <div class="progress-wrap" aria-label="Arrecadação 40% da meta de R$ 15.000">
+              <div class="progress-bar" style="--val:40%"><span>40%</span></div>
+            </div>
+            <p class="goal"><strong>Meta:</strong> R$ 15.000</p>
+          </div>
+
+          <div class="project-actions">
+            <a class="btn" href="cadastro.html">Doar agora</a>
+            <a class="btn ghost" href="cadastro.html">Ser voluntário</a>
+          </div>
+        </div>
+      </article>
     </section>
 
-    <aside class="aside-doacao" aria-labelledby="ttl-doar">
+    <aside class="aside-doacao fancy" aria-labelledby="ttl-doar">
       <h2 id="ttl-doar">Como Doar</h2>
-      <p>Escolha doação única ou recorrente. Enviaremos relatórios de transparência.</p>
-      <p><a class="btn" href="cadastro.html">Doar agora</a></p>
+      <p>Escolha doação única ou recorrente. Enviaremos relatórios de transparência por e-mail.</p>
+      <a class="btn" href="cadastro.html">Doar agora</a>
     </aside>
   </main>
 
