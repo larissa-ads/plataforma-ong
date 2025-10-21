@@ -146,23 +146,19 @@ input:focus,select:focus,textarea:focus{border-color:var(--brand);box-shadow:0 0
 #feedback.success{color:#16a34a;font-weight:700}
 #feedback.error{color:#b91c1c;font-weight:700}
 
-/* ===== Banner (SOMENTE imagem) ===== */
 /* ===== Banner ===== */
 .banner {
   display: flex;
   justify-content: center;
   margin: 2rem auto;
-  max-width: 1000px; /* opcional: limita a largura */
 }
 
 .banner-img {
-  width: 100%;
-  max-height: 320px;  /* 🔹 Reduz a altura */
-  object-fit: contain; /* mostra a imagem inteira sem cortar */
+  width: 90%;          /* ocupa 90% da largura */
+  max-height: 280px;   /* altura mais baixa */
+  object-fit: contain;
   border-radius: 16px;
-  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
-}
-
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
 }
 
 /* ===== Responsivo ===== */
