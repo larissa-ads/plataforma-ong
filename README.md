@@ -23,7 +23,7 @@ Este repositório contém a **primeira entrega** do projeto acadêmico: estrutur
 Abra https://validator.w3.org/ e valide os HTMLs (URL do GitHub Pages ou upload do arquivo).
 
 ## 🚀 Publicação (GitHub Pages)
-1. Repositório público (nome sugerido: `plataforma-ong`).
+1. Repositório público: (`ONG Seu Jairo).
 2. `Settings > Pages` → **Branch:** `main` | **Folder:** `/ (root)`.
 3. Use o link: `https://SEU-USUARIO.github.io/plataforma-ong/`
 
