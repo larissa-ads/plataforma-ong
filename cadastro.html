@@ -1,73 +1,12 @@
-<!doctype html>
-<html lang="pt-BR">
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Cadastro — ONG Seu Jairo</title>
-  <meta name="description" content="Cadastro de voluntários e doadores da ONG Seu Jairo.">
-  <link rel="stylesheet" href="style.css?v=9">
-</head>
-<body>
-  <a class="skip-link" href="#conteudo">Ir para o conteúdo</a>
-
-  <header class="topo">
-    <div class="container">
-      <img class="logo" src="logo.svg" alt="Logo da ONG Seu Jairo">
-      <nav aria-label="Navegação principal">
-        <ul class="menu">
-          <li><a href="index.html">Início</a></li>
-          <li><a href="projetos.html">Projetos</a></li>
-          <li><a href="cadastro.html" aria-current="page">Cadastro</a></li>
-        </ul>
-      </nav>
-    </div>
-  </header>
-
-  <section class="page-hero container" aria-label="Introdução">
-    <h1>Cadastro</h1>
-    <p>Preencha seus dados para apoiar um projeto ou participar como voluntário.</p>
-  </section>
-
-  <main id="conteudo" class="container">
-    <section class="form-card" aria-labelledby="ttl-form">
-      <h2 id="ttl-form" class="sr-only">Formulário de cadastro</h2>
-
-      <form id="form-cadastro" method="post" action="#" novalidate>
-        <!-- TIPO DE PARTICIPAÇÃO -->
-        <fieldset class="fieldset">
-          <legend>Tipo de participação</legend>
-          <div class="option-group" role="radiogroup" aria-label="Tipo de participação">
-            <label class="radio-chip">
-              <input type="radio" name="tipo" value="voluntario" checked aria-controls="bloco-voluntario">
-              <span class="option">Voluntário</span>
-            </label>
-            <label class="radio-chip">
-              <input type="radio" name="tipo" value="doador" aria-controls="bloco-doador">
-              <span class="option">Doador</span>
-            </label>
-          </div>
-        </fieldset>
-
-        <!-- DADOS PESSOAIS -->
-        <fieldset class="fieldset">
-          <legend>Dados pessoais</legend>
-
-          <div class="form-grid">
-            <div class="field">
-              <label for="nome">Nome completo <span class="req" aria-hidden="true">*</span></label>
-              <input id="nome" name="nome" type="text" required minlength="3" autocomplete="name" placeholder="Seu nome completo">
-            </div>
-
-            <div class="field">
-              <label for="email">E-mail <span class="req" aria-hidden="true">*</span></label>
-              <input id="email" name="email" type="email" required autocomplete="email" placeholder="seu@email.com">
-            </div>
-
-            <div class="field">
-              <label for="cpf">CPF <span class="req" aria-hidden="true">*</span></label>
-              <input id="cpf" name="cpf" type="text" required inputmode="numeric" maxlength="14"
-                     placeholder="000.000.000-00" pattern="^\d{3}\.\d{3}\.\d{3}-\d{2}$" aria-describedby="cpf-ajuda">
-              <small id="cpf-ajuda" class="hint">Formato: 000.000.000-00</small>
-            </div>
-
-            <div class="field">
+/* ===== Tipo de participação (chips) ===== */
+.option-group{display:flex; gap:.6rem; flex-wrap:wrap; margin:.2rem 0 .4rem}
+.radio-chip{position:relative; display:inline-flex; align-items:center}
+.radio-chip input[type="radio"]{position:absolute; inset:0; opacity:0; cursor:pointer}
+.option{
+  border:1.5px solid var(--line); background:#fff; color:var(--text);
+  padding:.5rem .9rem; border-radius:999px; font-weight:600; user-select:none;
+  transition:border-color .2s ease, background .2s ease, color .2s ease;
+}
+.radio-chip input[type="radio"]:checked + .option{
+  border-color:var(--brand); color:var(--brand); background:rgba(11,110,79,.08);
+}
