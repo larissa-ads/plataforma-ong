@@ -191,3 +191,40 @@ input:focus,select:focus,textarea:focus{border-color:var(--brand);box-shadow:0 0
   border-radius:16px;
   box-shadow:0 8px 24px rgba(0,0,0,.12);
 }
+/* ===== Logo ===== */
+.logo {
+  height: 44px;
+  width: auto;
+  transition: transform 0.5s ease, opacity 0.5s ease;
+  opacity: 0;
+  transform: translateY(-10px);
+  animation: fadeInLogo 1s forwards;
+}
+
+.logo-home {
+  height: 64px; /* maior na página inicial */
+}
+
+@keyframes fadeInLogo {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ===== Banner ===== */
+.banner {
+  display: flex;
+  justify-content: center;
+  margin: 2rem auto;
+  max-width: 1000px;
+}
+
+.banner-img {
+  width: 100%;
+  max-height: 320px;
+  object-fit: contain;
+  border-radius: 16px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+}
+
