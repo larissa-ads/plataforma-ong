@@ -25,7 +25,7 @@ Abra https://validator.w3.org/ e valide os HTMLs (URL do GitHub Pages ou upload 
 ## 🚀 Publicação (GitHub Pages)
 1. Repositório público: (`ONG Seu Jairo).
 2. `Settings > Pages` → **Branch:** `main` | **Folder:** `/ (root)`.
-3. Use o link: `https://SEU-USUARIO.github.io/plataforma-ong/`
+3. Use o link: `https://larissa-ads.github.io/plataforma-ong/`
 
 ---
 
