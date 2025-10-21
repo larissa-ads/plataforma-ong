@@ -1,12 +1,225 @@
-/* ===== Tipo de participação (chips) ===== */
-.option-group{display:flex; gap:.6rem; flex-wrap:wrap; margin:.2rem 0 .4rem}
-.radio-chip{position:relative; display:inline-flex; align-items:center}
-.radio-chip input[type="radio"]{position:absolute; inset:0; opacity:0; cursor:pointer}
-.option{
-  border:1.5px solid var(--line); background:#fff; color:var(--text);
-  padding:.5rem .9rem; border-radius:999px; font-weight:600; user-select:none;
-  transition:border-color .2s ease, background .2s ease, color .2s ease;
-}
-.radio-chip input[type="radio"]:checked + .option{
-  border-color:var(--brand); color:var(--brand); background:rgba(11,110,79,.08);
-}
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Cadastro — ONG Seu Jairo</title>
+  <meta name="description" content="Cadastro de voluntários e doadores da ONG Seu Jairo.">
+  <link rel="stylesheet" href="style.css?v=12">
+</head>
+<body>
+  <a class="skip-link" href="#conteudo">Ir para o conteúdo</a>
+
+  <header class="topo">
+    <div class="container">
+      <img class="logo" src="logo.svg" alt="Logo da ONG Seu Jairo">
+      <nav aria-label="Navegação principal">
+        <ul class="menu">
+          <li><a href="index.html">Início</a></li>
+          <li><a href="projetos.html">Projetos</a></li>
+          <li><a href="cadastro.html" aria-current="page">Cadastro</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <section class="page-hero container" aria-label="Introdução">
+    <h1>Cadastro</h1>
+    <p>Preencha seus dados para apoiar um projeto ou participar como voluntário.</p>
+  </section>
+
+  <main id="conteudo" class="container">
+    <section class="form-card" aria-labelledby="ttl-form">
+      <h2 id="ttl-form" class="sr-only">Formulário de cadastro</h2>
+
+      <form id="form-cadastro" method="post" action="#" novalidate>
+        <!-- TIPO DE PARTICIPAÇÃO -->
+        <fieldset class="fieldset">
+          <legend>Tipo de participação</legend>
+          <div class="option-group" role="radiogroup" aria-label="Tipo de participação">
+            <label class="radio-chip">
+              <input type="radio" name="tipo" value="voluntario" checked aria-controls="bloco-voluntario">
+              <span class="option">Voluntário</span>
+            </label>
+            <label class="radio-chip">
+              <input type="radio" name="tipo" value="doador" aria-controls="bloco-doador">
+              <span class="option">Doador</span>
+            </label>
+          </div>
+        </fieldset>
+
+        <!-- DADOS PESSOAIS -->
+        <fieldset class="fieldset">
+          <legend>Dados pessoais</legend>
+          <div class="form-grid">
+            <div class="field">
+              <label for="nome">Nome completo <span class="req" aria-hidden="true">*</span></label>
+              <input id="nome" name="nome" type="text" required minlength="3" autocomplete="name" placeholder="Seu nome completo">
+            </div>
+            <div class="field">
+              <label for="email">E-mail <span class="req" aria-hidden="true">*</span></label>
+              <input id="email" name="email" type="email" required autocomplete="email" placeholder="seu@email.com">
+            </div>
+            <div class="field">
+              <label for="cpf">CPF <span class="req" aria-hidden="true">*</span></label>
+              <input id="cpf" name="cpf" type="text" required inputmode="numeric" maxlength="14"
+                     placeholder="000.000.000-00" pattern="^\d{3}\.\d{3}\.\d{3}-\d{2}$" aria-describedby="cpf-ajuda">
+              <small id="cpf-ajuda" class="hint">Formato: 000.000.000-00</small>
+            </div>
+            <div class="field">
+              <label for="telefone">Telefone <span class="req" aria-hidden="true">*</span></label>
+              <input id="telefone" name="telefone" type="tel" required inputmode="tel" maxlength="15" placeholder="(00) 90000-0000">
+            </div>
+            <div class="field">
+              <label for="nascimento">Data de nascimento</label>
+              <input id="nascimento" name="nascimento" type="date">
+            </div>
+            <div class="field">
+              <label for="area">Área de interesse</label>
+              <select id="area" name="area">
+                <option value="">Selecione</option>
+                <option value="educacao">Educação</option>
+                <option value="saude">Saúde</option>
+                <option value="meio-ambiente">Meio Ambiente</option>
+              </select>
+            </div>
+          </div>
+        </fieldset>
+
+        <!-- ENDEREÇO -->
+        <fieldset class="fieldset">
+          <legend>Endereço</legend>
+          <div class="form-grid">
+            <div class="field">
+              <label for="cep">CEP <span class="req" aria-hidden="true">*</span></label>
+              <input id="cep" name="cep" type="text" required inputmode="numeric" maxlength="9"
+                     placeholder="00000-000" pattern="^\d{5}-\d{3}$">
+              <small class="hint">Somente números; a máscara preenche o hífen automaticamente.</small>
+            </div>
+            <div class="field">
+              <label for="endereco">Endereço</label>
+              <input id="endereco" name="endereco" type="text" autocomplete="street-address" placeholder="Rua, número, complemento">
+            </div>
+            <div class="field">
+              <label for="cidade">Cidade</label>
+              <input id="cidade" name="cidade" type="text" autocomplete="address-level2">
+            </div>
+            <div class="field">
+              <label for="estado">Estado</label>
+              <select id="estado" name="estado">
+                <option value="">Selecione</option>
+                <option>AC</option><option>AL</option><option>AP</option><option>AM</option>
+                <option>BA</option><option>CE</option><option>DF</option><option>ES</option>
+                <option>GO</option><option>MA</option><option>MT</option><option>MS</option>
+                <option>MG</option><option>PA</option><option>PB</option><option>PR</option>
+                <option>PE</option><option>PI</option><option>RJ</option><option>RN</option>
+                <option>RS</option><option>RO</option><option>RR</option><option>SC</option>
+                <option>SP</option><option>SE</option><option>TO</option>
+              </select>
+            </div>
+          </div>
+        </fieldset>
+
+        <!-- VOLUNTÁRIO (condicional) -->
+        <fieldset id="bloco-voluntario" class="fieldset" aria-live="polite">
+          <legend>Disponibilidade (Voluntário)</legend>
+          <div class="form-grid">
+            <div class="field">
+              <label for="disponibilidade">Quando pode ajudar?</label>
+              <select id="disponibilidade" name="disponibilidade">
+                <option value="">Selecione</option>
+                <option>Seg a Sex (manhã)</option>
+                <option>Seg a Sex (tarde)</option>
+                <option>Seg a Sex (noite)</option>
+                <option>Fins de semana</option>
+              </select>
+            </div>
+            <div class="field">
+              <label for="habilidades">Habilidades</label>
+              <textarea id="habilidades" name="habilidades" rows="3" placeholder="Conte um pouco sobre suas habilidades/interesses."></textarea>
+            </div>
+            <label class="check">
+              <input type="checkbox" name="presencial"> Posso atuar presencialmente
+            </label>
+          </div>
+        </fieldset>
+
+        <!-- DOADOR (condicional) -->
+        <fieldset id="bloco-doador" class="fieldset" hidden aria-live="polite">
+          <legend>Informações de doação (Doador)</legend>
+          <div class="form-grid">
+            <div class="field">
+              <label for="valor_doacao">Valor da doação</label>
+              <input id="valor_doacao" name="valor_doacao" type="text" inputmode="numeric" placeholder="R$ 0,00" aria-describedby="ajuda-valor">
+              <small id="ajuda-valor" class="hint">Digite o valor; formatamos automaticamente como Real (R$).</small>
+            </div>
+            <div class="field">
+              <label for="periodicidade">Periodicidade</label>
+              <select id="periodicidade" name="periodicidade">
+                <option>Única</option>
+                <option>Mensal</option>
+                <option>Trimestral</option>
+              </select>
+            </div>
+            <label class="check">
+              <input type="checkbox" name="recibo"> Quero recibo para IR
+            </label>
+          </div>
+        </fieldset>
+
+        <!-- PREFERÊNCIAS -->
+        <fieldset class="fieldset">
+          <legend>Preferências</legend>
+          <label class="check">
+            <input type="checkbox" name="newsletter"> Quero receber newsletter
+          </label>
+        </fieldset>
+
+        <p class="acoes">
+          <button type="submit" class="btn">Enviar cadastro</button>
+          <button type="reset" class="btn ghost">Limpar</button>
+        </p>
+
+        <p id="feedback" role="status" aria-live="polite"></p>
+      </form>
+    </section>
+  </main>
+
+  <footer class="rodape">
+    <div class="container">
+      <p>&copy; 2025 ONG Seu Jairo</p>
+    </div>
+  </footer>
+
+  <!-- JS de máscaras -->
+  <script src="masks.js" defer></script>
+
+  <!-- Toggle blocos + máscara moeda -->
+  <script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const radios = document.querySelectorAll('input[name="tipo"]');
+    const blocoVol = document.getElementById('bloco-voluntario');
+    const blocoDoa = document.getElementById('bloco-doador');
+
+    function toggle(tipo){
+      blocoVol.hidden = (tipo !== 'voluntario');
+      blocoDoa.hidden = (tipo !== 'doador');
+    }
+    radios.forEach(r => r.addEventListener('change', e => toggle(e.target.value)));
+    const checked = document.querySelector('input[name="tipo"]:checked');
+    if (checked) toggle(checked.value);
+
+    // Máscara simples de moeda BRL
+    const fld = document.getElementById('valor_doacao');
+    if (fld){
+      fld.addEventListener('input', (e) => {
+        let v = e.target.value.replace(/\D/g, '');
+        if(!v) { e.target.value = ''; return; }
+        v = (Number(v) / 100).toLocaleString('pt-BR', { style:'currency', currency:'BRL' });
+        e.target.value = v;
+      });
+    }
+  });
+  </script>
+</body>
+</html>
