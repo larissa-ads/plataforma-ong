@@ -5,15 +5,15 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Projetos — ONG Seu Jairo</title>
   <meta name="description" content="Projetos sociais, doações e voluntariado da ONG Seu Jairo.">
-  <!-- CSS NA RAIZ + cache-buster -->
-  <link rel="stylesheet" href="style.css?v=6">
+  <link rel="stylesheet" href="style.css?v=27">
 </head>
 <body>
   <a class="skip-link" href="#conteudo">Ir para o conteúdo</a>
 
+  <!-- TOPO -->
   <header class="topo">
     <div class="container">
-      <img class="logo" src="logo.svg" alt="Logo da ONG Seu Jairo">
+      <img class="logo" src="logo.png" alt="Logo da ONG Seu Jairo" width="140" height="40">
       <nav aria-label="Navegação principal">
         <ul class="menu">
           <li><a href="index.html">Início</a></li>
@@ -24,13 +24,21 @@
     </div>
   </header>
 
-  <!-- BANNER -->
+  <!-- HERO DA PÁGINA -->
   <section class="page-hero container" aria-label="Introdução">
     <h1>Projetos Sociais</h1>
     <p>Transparência, impacto e participação comunitária. Escolha um projeto e faça parte.</p>
   </section>
 
+  <!-- CONTEÚDO -->
   <main id="conteudo" class="container">
+
+    <!-- BANNER PRINCIPAL -->
+    <section class="banner" aria-label="Banner institucional">
+      <img src="/plataforma-ong/banner.png" alt="Banner da ONG Seu Jairo" class="banner-img">
+    </section>
+
+    <!-- FILTROS (apenas visual) -->
     <div class="filters" role="tablist" aria-label="Filtros de projetos">
       <button class="chip is-active" role="tab" aria-selected="true">Todos</button>
       <button class="chip" role="tab">Educação</button>
@@ -38,14 +46,13 @@
       <button class="chip" role="tab">Meio ambiente</button>
     </div>
 
+    <!-- LISTA DE PROJETOS (sem imagens) -->
     <section class="projects-grid" aria-labelledby="ttl-lista">
       <h2 id="ttl-lista" class="sr-only">Lista de projetos</h2>
 
       <!-- Projeto 1 -->
       <article class="project-card">
-        <div class="project-media">
-          <span class="badge">Educação</span>
-        </div>
+        <div class="project-media"><span class="badge">Educação</span></div>
         <div class="project-body">
           <h3 class="project-title">Educação para Todos</h3>
           <p class="project-desc">
@@ -66,9 +73,7 @@
 
       <!-- Projeto 2 -->
       <article class="project-card">
-        <div class="project-media">
-          <span class="badge green">Saúde</span>
-        </div>
+        <div class="project-media"><span class="badge green">Saúde</span></div>
         <div class="project-body">
           <h3 class="project-title">Saúde Comunitária</h3>
           <p class="project-desc">
@@ -88,26 +93,15 @@
       </article>
     </section>
 
+    <!-- COMO DOAR -->
     <aside class="aside-doacao fancy" aria-labelledby="ttl-doar">
       <h2 id="ttl-doar">Como Doar</h2>
       <p>Escolha doação única ou recorrente. Enviaremos relatórios de transparência por e-mail.</p>
       <a class="btn" href="cadastro.html">Doar agora</a>
     </aside>
   </main>
-  <main id="conteudo">
-    
-  <!-- Banner principal -->
-  <section class="banner">
-    <img src="/plataforma-ong/banner.png" alt="Banner da ONG Seu Jairo" class="banner-img">
-  </section>
-  
-  <section class="container section" aria-labelledby="ttl-projetos">
-    <header class="section__head">
-      <h1 id="ttl-projetos">Projetos Sociais</h1>
-      <p>Apoie iniciativas e encontre vagas de voluntariado.</p>
-    </header>
 
-
+  <!-- RODAPÉ -->
   <footer class="rodape">
     <div class="container">
       <p>&copy; 2025 ONG Seu Jairo</p>
