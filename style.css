@@ -217,6 +217,7 @@ input:focus,select:focus,textarea:focus{
   color: #333;
   line-height: 1.6;
 }
+
 /* ===== Ajuste das imagens dos projetos ===== */
 .item-projeto img {
   width: 100%;
@@ -229,6 +230,7 @@ input:focus,select:focus,textarea:focus{
   margin-left: auto;
   margin-right: auto;
 }
+
 /* ===== Centralizar e dar espaçamento ===== */
 .item-projeto {
   text-align: center;
