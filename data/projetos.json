@@ -1,5 +1,20 @@
 [
-  { "titulo": "Cesta Solidária", "descricao": "Distribuição mensal de alimentos a famílias em vulnerabilidade.", "categoria": "Assistência", "imagem": "imagens/cesta.svg" },
-  { "titulo": "Educa Jairo", "descricao": "Reforço escolar e inclusão digital para crianças e adolescentes.", "categoria": "Educação", "imagem": "imagens/educa.svg" },
-  { "titulo": "Eco Comunidade", "descricao": "Mutirões de limpeza, reciclagem e educação ambiental.", "categoria": "Meio Ambiente", "imagem": "imagens/eco.svg" }
+  {
+    "titulo": "Cesta Solidária",
+    "descricao": "Distribuição mensal de alimentos a famílias em vulnerabilidade.",
+    "categoria": "Assistência",
+    "imagem": "imagens/cesta.svg"
+  },
+  {
+    "titulo": "Educa Jairo",
+    "descricao": "Reforço escolar e inclusão digital para crianças e adolescentes.",
+    "categoria": "Educação",
+    "imagem": "imagens/educa.svg"
+  },
+  {
+    "titulo": "Eco Comunidade",
+    "descricao": "Mutirões de limpeza, reciclagem e educação ambiental no bairro.",
+    "categoria": "Meio Ambiente",
+    "imagem": "imagens/eco.svg"
+  }
 ]
