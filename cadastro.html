@@ -15,9 +15,9 @@
       <img class="logo" src="logo.svg" alt="Logo da ONG Seu Jairo">
       <nav aria-label="Navegação principal">
         <ul class="menu">
-          <li><a href="index.html">Início</a></li>
-          <li><a href="projetos.html">Projetos</a></li>
-          <li><a href="cadastro.html" aria-current="page">Cadastro</a></li>
+          <li><a class="spa-link" href="index.html">Início</a></li>
+          <li><a class="spa-link" href="projetos.html">Projetos</a></li>
+          <li><a class="spa-link" href="cadastro.html" aria-current="page">Cadastro</a></li>
         </ul>
       </nav>
     </div>
@@ -183,6 +183,13 @@
         <p id="feedback" role="status" aria-live="polite"></p>
       </form>
     </section>
+
+    <!-- Listagem de cadastros salvos -->
+    <section aria-labelledby="titulo-lista">
+      <h2 id="titulo-lista">Cadastros recebidos (localStorage)</h2>
+      <ul id="lista-cadastros"></ul>
+      <!-- <button type="button" onclick="limparCadastros()">Limpar cadastros</button> -->
+    </section>
   </main>
 
   <footer class="rodape">
@@ -191,10 +198,7 @@
     </div>
   </footer>
 
-  <!-- JS de máscaras -->
-  <script src="masks.js" defer></script>
-
-  <!-- Toggle blocos + máscara moeda -->
+  <!-- Toggle blocos + máscara moeda (inline) -->
   <script>
   document.addEventListener('DOMContentLoaded', () => {
     const radios = document.querySelectorAll('input[name="tipo"]');
@@ -221,14 +225,13 @@
     }
   });
   </script>
+
+  <!-- Scripts do formulário -->
+  <script src="js/masks.js"></script>
+  <script src="js/validation.js"></script>
+  <script src="js/storage.js"></script>
+
+  <!-- SPA -->
+  <script src="js/spa.js"></script>
 </body>
 </html>
-
-<!-- Listagem de cadastros salvos -->
-<section aria-labelledby="titulo-lista">
-  <h2 id="titulo-lista">Cadastros recebidos (localStorage)</h2>
-  <ul id="lista-cadastros"></ul>
-
-  <!-- Botão opcional para limpar cadastros -->
-  <!-- <button type="button" onclick="limparCadastros()">Limpar cadastros</button> -->
-</section>
