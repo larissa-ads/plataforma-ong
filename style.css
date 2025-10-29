@@ -303,3 +303,5 @@ input:focus,select:focus,textarea:focus{border-color:var(--brand);box-shadow:0 0
   background: #f5f0ff; color: #6741d9;
   border-radius: 999px; border: 1px solid #e6dcff;
 }
+.erro { border:2px solid #e74c3c; background:#fff5f5; }
+.erro-msg { color:#e74c3c; font-size:.9rem; margin:4px 0 8px; display:block; }
