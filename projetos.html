@@ -38,59 +38,25 @@
       <img src="/plataforma-ong/banner.png" alt="Banner da ONG Seu Jairo" class="banner-img">
     </section>
 
-    <!-- FILTROS (apenas visual) -->
-    <div class="filters" role="tablist" aria-label="Filtros de projetos">
-      <button class="chip is-active" role="tab" aria-selected="true">Todos</button>
-      <button class="chip" role="tab">Educação</button>
-      <button class="chip" role="tab">Saúde</button>
-      <button class="chip" role="tab">Meio ambiente</button>
-    </div>
+    <!-- SEÇÃO DE PROJETOS DINÂMICOS -->
+    <section aria-labelledby="titulo-projetos" class="sec-projetos">
+      <div class="projetos-header">
+        <h1 id="titulo-projetos">Projetos</h1>
 
-    <!-- LISTA DE PROJETOS (sem imagens) -->
-    <section class="projects-grid" aria-labelledby="ttl-lista">
-      <h2 id="ttl-lista" class="sr-only">Lista de projetos</h2>
+        <!-- Campo de busca -->
+        <label for="busca-projetos" class="sr-only">Buscar projetos</label>
+        <input
+          id="busca-projetos"
+          type="search"
+          placeholder="Buscar por nome, descrição ou categoria..."
+          autocomplete="off"
+          aria-label="Buscar projetos"
+        />
+      </div>
 
-      <!-- Projeto 1 -->
-      <article class="project-card">
-        <div class="project-media"><span class="badge">Educação</span></div>
-        <div class="project-body">
-          <h3 class="project-title">Educação para Todos</h3>
-          <p class="project-desc">
-            Alfabetização e reforço escolar em comunidades vulneráveis, com turmas presenciais e encontros online.
-          </p>
-          <div class="project-meta">
-            <div class="progress-wrap" aria-label="Arrecadação 32% da meta de R$ 25.000">
-              <div class="progress-bar" style="--val:32%"><span>32%</span></div>
-            </div>
-            <p class="goal"><strong>Meta:</strong> R$ 25.000</p>
-          </div>
-          <div class="project-actions">
-            <a class="btn" href="cadastro.html">Quero ajudar</a>
-            <a class="btn ghost" href="cadastro.html">Quero ser voluntário</a>
-          </div>
-        </div>
-      </article>
+      <p id="projetos-empty" hidden>Nenhum projeto encontrado.</p>
 
-      <!-- Projeto 2 -->
-      <article class="project-card">
-        <div class="project-media"><span class="badge green">Saúde</span></div>
-        <div class="project-body">
-          <h3 class="project-title">Saúde Comunitária</h3>
-          <p class="project-desc">
-            Atendimentos básicos, orientação nutricional e campanhas de prevenção em bairros periféricos.
-          </p>
-          <div class="project-meta">
-            <div class="progress-wrap" aria-label="Arrecadação 40% da meta de R$ 15.000">
-              <div class="progress-bar" style="--val:40%"><span>40%</span></div>
-            </div>
-            <p class="goal"><strong>Meta:</strong> R$ 15.000</p>
-          </div>
-          <div class="project-actions">
-            <a class="btn" href="cadastro.html">Doar agora</a>
-            <a class="btn ghost" href="cadastro.html">Ser voluntário</a>
-          </div>
-        </div>
-      </article>
+      <div id="projetos-container" class="grid-projetos" aria-live="polite"></div>
     </section>
 
     <!-- COMO DOAR -->
@@ -107,5 +73,8 @@
       <p>&copy; 2025 ONG Seu Jairo</p>
     </div>
   </footer>
+
+  <!-- Scripts -->
+  <script src="js/templates.js"></script>
 </body>
 </html>
