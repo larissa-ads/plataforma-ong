@@ -16,9 +16,9 @@
       <img class="logo" src="logo.png" alt="Logo da ONG Seu Jairo" width="140" height="40">
       <nav aria-label="Navegação principal">
         <ul class="menu">
-          <li><a href="index.html">Início</a></li>
-          <li><a href="projetos.html" aria-current="page">Projetos</a></li>
-          <li><a href="cadastro.html">Cadastro</a></li>
+          <li><a class="spa-link" href="index.html">Início</a></li>
+          <li><a class="spa-link" href="projetos.html" aria-current="page">Projetos</a></li>
+          <li><a class="spa-link" href="cadastro.html">Cadastro</a></li>
         </ul>
       </nav>
     </div>
@@ -35,7 +35,8 @@
 
     <!-- BANNER PRINCIPAL -->
     <section class="banner" aria-label="Banner institucional">
-      <img src="/plataforma-ong/banner.png" alt="Banner da ONG Seu Jairo" class="banner-img">
+      <!-- caminho relativo para funcionar no GitHub Pages -->
+      <img src="imagens/banner.png" alt="Banner da ONG Seu Jairo" class="banner-img">
     </section>
 
     <!-- SEÇÃO DE PROJETOS DINÂMICOS -->
@@ -63,7 +64,7 @@
     <aside class="aside-doacao fancy" aria-labelledby="ttl-doar">
       <h2 id="ttl-doar">Como Doar</h2>
       <p>Escolha doação única ou recorrente. Enviaremos relatórios de transparência por e-mail.</p>
-      <a class="btn" href="cadastro.html">Doar agora</a>
+      <a class="btn spa-link" href="cadastro.html">Doar agora</a>
     </aside>
   </main>
 
@@ -76,5 +77,6 @@
 
   <!-- Scripts -->
   <script src="js/templates.js"></script>
+  <script src="js/spa.js"></script>
 </body>
 </html>
