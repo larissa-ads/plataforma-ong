@@ -1,5 +1,10 @@
-// ---- templates.js --------------------------------------------------
-// Função de template: gera o HTML de um card de projeto
+// ---- templates.js (com fetch + fallback) --------------------------
+const PROJETOS = [
+  { titulo: "Cesta Solidária", descricao: "Distribuição mensal de alimentos.", categoria: "Assistência", imagem: "imagens/cesta.svg" },
+  { titulo: "Educa Jairo", descricao: "Reforço escolar e inclusão digital.", categoria: "Educação", imagem: "imagens/educa.svg" },
+  { titulo: "Eco Comunidade", descricao: "Mutirões de limpeza e reciclagem.", categoria: "Meio Ambiente", imagem: "imagens/eco.svg" }
+];
+
 function templateProjeto({ titulo, descricao, categoria = "Social", imagem = "imagens/banner.svg" }) {
   return `
     <article class="card-projeto" role="article">
@@ -13,33 +18,9 @@ function templateProjeto({ titulo, descricao, categoria = "Social", imagem = "im
   `;
 }
 
-// Dados de exemplo (você pode trocar ou complementar)
-const PROJETOS = [
-  {
-    titulo: "Cesta Solidária",
-    descricao: "Distribuição mensal de alimentos a famílias em situação de vulnerabilidade.",
-    categoria: "Assistência",
-    imagem: "imagens/cesta.svg"
-  },
-  {
-    titulo: "Educa Jairo",
-    descricao: "Reflexo escolar e inclusão digital para crianças e adolescentes.",
-    categoria: "Educação",
-    imagem: "imagens/educa.svg"
-  },
-  {
-    titulo: "Eco Comunidade",
-    descricao: "Mutirões de limpeza, reciclagem e educação ambiental no bairro.",
-    categoria: "Meio Ambiente",
-    imagem: "imagens/eco.svg"
-  }
-];
-
-// Renderiza a lista de projetos no container
 function renderProjetos(lista = PROJETOS) {
   const container = document.querySelector("#projetos-container");
   const empty = document.querySelector("#projetos-empty");
-
   if (!container) return;
 
   if (!lista || lista.length === 0) {
@@ -47,35 +28,34 @@ function renderProjetos(lista = PROJETOS) {
     if (empty) empty.hidden = false;
     return;
   }
-
   if (empty) empty.hidden = true;
   container.innerHTML = lista.map(templateProjeto).join("");
 }
 
-// Filtro por texto (opcional)
-function filtrarProjetosPorTexto(texto) {
-  const t = (texto || "").toLowerCase();
-  return PROJETOS.filter(p =>
-    p.titulo.toLowerCase().includes(t) ||
-    p.descricao.toLowerCase().includes(t) ||
-    (p.categoria || "").toLowerCase().includes(t)
-  );
-}
-
-// Bind de eventos da UI (busca)
-function bindProjetosUI() {
+function bindProjetosUI(base = PROJETOS) {
   const busca = document.querySelector("#busca-projetos");
   if (!busca) return;
-
   busca.addEventListener("input", (e) => {
-    const termo = e.target.value;
-    const filtrados = filtrarProjetosPorTexto(termo);
+    const t = (e.target.value || "").toLowerCase();
+    const filtrados = base.filter(p =>
+      [p.titulo, p.descricao, p.categoria].join(" ").toLowerCase().includes(t)
+    );
     renderProjetos(filtrados);
   });
 }
 
-// Inicializa quando a página carregar
-document.addEventListener("DOMContentLoaded", () => {
-  renderProjetos();
-  bindProjetosUI();
-});
+async function carregarProjetos() {
+  try {
+    const r = await fetch("data/projetos.json", { cache: "no-store" });
+    if (!r.ok) throw new Error("Falha ao carregar dados");
+    const lista = await r.json();
+    renderProjetos(lista);
+    bindProjetosUI(lista);
+  } catch (e) {
+    console.warn("Usando fallback local:", e.message);
+    renderProjetos(PROJETOS);
+    bindProjetosUI(PROJETOS);
+  }
+}
+
+document.addEventListener("DOMContentLoaded", carregarProjetos);
