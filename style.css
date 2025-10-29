@@ -238,4 +238,12 @@ input:focus,select:focus,textarea:focus{border-color:var(--brand);box-shadow:0 0
   margin-bottom: 8px;
   display: block;
 }
+#lista-cadastros {
+  margin-top: 12px;
+  padding-left: 18px;
+}
+#lista-cadastros li {
+  margin: 6px 0;
+  line-height: 1.4;
+}
 
