@@ -305,3 +305,9 @@ input:focus,select:focus,textarea:focus{border-color:var(--brand);box-shadow:0 0
 }
 .erro { border:2px solid #e74c3c; background:#fff5f5; }
 .erro-msg { color:#e74c3c; font-size:.9rem; margin:4px 0 8px; display:block; }
+#feedback { margin-top: .75rem; padding: .75rem 1rem; border-radius: .75rem; }
+#feedback.ok { background: #eafaf1; color: #1e7e34; border: 1px solid #cdebd7; }
+#feedback.err { background: #fff5f5; color: #b02a37; border: 1px solid #f3cccc; }
+
+.erro { border: 2px solid #e74c3c; background-color: #fff5f5; }
+.erro-msg { color: #e74c3c; font-size: 0.9rem; margin: 4px 0 8px; display: block; }
