@@ -1,24 +1,19 @@
-// Função para validar o formulário de cadastro
+// validation.js — validação + feedback elegante
 function validarFormulario(form) {
   const campos = form.querySelectorAll('[required]');
   let valido = true;
 
   campos.forEach(campo => {
-    const mensagemErro = campo.nextElementSibling;
-
-    // cria elemento <span> se não existir
-    if (!mensagemErro || !mensagemErro.classList.contains('erro-msg')) {
+    if (!campo.nextElementSibling || !campo.nextElementSibling.classList.contains('erro-msg')) {
       const span = document.createElement('span');
-      span.classList.add('erro-msg');
+      span.className = 'erro-msg';
       campo.insertAdjacentElement('afterend', span);
     }
-
     const erro = campo.nextElementSibling;
 
-    // valida se o campo está correto
     if (!campo.checkValidity()) {
       campo.classList.add('erro');
-      erro.textContent = '⚠️ Preencha este campo corretamente.';
+      erro.textContent = 'Preencha corretamente este campo.';
       valido = false;
     } else {
       campo.classList.remove('erro');
@@ -29,20 +24,26 @@ function validarFormulario(form) {
   return valido;
 }
 
-// Captura o formulário e aplica a validação
 document.addEventListener('DOMContentLoaded', () => {
   const form = document.querySelector('#form-cadastro');
+  const feedback = document.querySelector('#feedback');
   if (!form) return;
+
+  function showFeedback(msg, ok = false) {
+    if (!feedback) return;
+    feedback.textContent = msg;
+    feedback.classList.toggle('ok', ok);
+    feedback.classList.toggle('err', !ok);
+  }
 
   form.addEventListener('submit', (e) => {
     e.preventDefault();
-
     if (validarFormulario(form)) {
       salvarCadastro(form);
-      alert('✅ Cadastro enviado com sucesso!');
+      showFeedback('✅ Cadastro enviado com sucesso!', true);
       form.reset();
     } else {
-      alert('Por favor, verifique os campos destacados.');
+      showFeedback('⚠️ Por favor, corrija os campos destacados.', false);
     }
   });
 });
