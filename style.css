@@ -311,6 +311,7 @@ input:focus,select:focus,textarea:focus{border-color:var(--brand);box-shadow:0 0
 
 .erro { border: 2px solid #e74c3c; background-color: #fff5f5; }
 .erro-msg { color: #e74c3c; font-size: 0.9rem; margin: 4px 0 8px; display: block; }
+
 /* Foco visível (teclado) */
 :focus {
   outline: 2px solid #6741d9;
@@ -351,3 +352,4 @@ input:focus,select:focus,textarea:focus{border-color:var(--brand);box-shadow:0 0
   a, .btn { color: #d6b3ff; }
   .card-projeto { background: #1c1c1c; border-color: #333; }
 }
+
