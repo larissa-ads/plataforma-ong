@@ -311,3 +311,43 @@ input:focus,select:focus,textarea:focus{border-color:var(--brand);box-shadow:0 0
 
 .erro { border: 2px solid #e74c3c; background-color: #fff5f5; }
 .erro-msg { color: #e74c3c; font-size: 0.9rem; margin: 4px 0 8px; display: block; }
+/* Foco visível (teclado) */
+:focus {
+  outline: 2px solid #6741d9;
+  outline-offset: 3px;
+}
+
+:focus-visible {
+  outline: 3px solid #6741d9;
+  outline-offset: 3px;
+}
+
+/* Skip link (pular para conteúdo) visível ao focar */
+.skip-link {
+  position: absolute;
+  left: -9999px;
+  top: auto;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+}
+
+.skip-link:focus {
+  left: 16px;
+  top: 16px;
+  width: auto;
+  height: auto;
+  background: #000;
+  color: #fff;
+  padding: 8px 12px;
+  border-radius: 8px;
+  z-index: 9999;
+}
+
+/* Modo escuro automático */
+@media (prefers-color-scheme: dark) {
+  :root { color-scheme: dark; }
+  body { background: #111; color: #eee; }
+  a, .btn { color: #d6b3ff; }
+  .card-projeto { background: #1c1c1c; border-color: #333; }
+}
